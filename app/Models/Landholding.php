@@ -41,6 +41,7 @@ class Landholding extends Model
         'targetyear',
         'projectedDelivery',
         'maro_id',
+        'paro_id',
         'file',
     ];
 }

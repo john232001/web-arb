@@ -16,6 +16,12 @@ class Form20Controller extends Controller
     public function generateform($id)
     {
         $data = DB::table('landholdings')->where('landholdings.id', $id)->first();
+
+        $paro = DB::table('landholdings')
+            ->join('officers', 'officers.id', '=', 'landholdings.paro_id')
+            ->select('landholdings.*', 'officers.officer_name')
+            ->where('landholdings.id', $id)->first();
+
         $templateProcessor = new TemplateProcessor('form-template/FormNo.20.docx');
         $templateProcessor->setValue('firstname', $data->firstname);
         $templateProcessor->setValue('familyname', $data->familyname);
@@ -28,6 +34,7 @@ class Form20Controller extends Controller
         $templateProcessor->setValue('surveyArea', $data->surveyArea);
         $templateProcessor->setValue('taxNo', $data->taxNo);
         $templateProcessor->setValue('municipality', $data->municipality);
+        $templateProcessor->setValue('paro', $paro->officer_name);
         $fileName = $data->familyname;
         $templateProcessor->saveAs('Form No.20' . '-' . $fileName . '.docx');
         return response()->download('Form No.20' . '-' . $fileName . '.docx')->deleteFileAfterSend(true);

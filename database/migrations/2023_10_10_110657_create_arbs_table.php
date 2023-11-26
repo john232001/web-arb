@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('datebirth');
             $table->bigInteger('gender_id');
             $table->string('address');
-            $table->string('ownership');
+            $table->bigInteger('ownership_id');
             $table->string('dateOfOath');
             $table->timestamps();
         });

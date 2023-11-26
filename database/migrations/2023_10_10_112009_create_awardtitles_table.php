@@ -18,12 +18,12 @@ return new class extends Migration
             $table->bigInteger('awardType_id');
             $table->string('fbOrcname');
             $table->integer('serialNo');
-            $table->string('genDate');
-            $table->integer('epebNo');
-            $table->string('epebDate');
-            $table->string('registerDate');
-            $table->string('awardtitleNo');
-            $table->string('distributeDate');
+            $table->string('genDate')->nullable();
+            $table->integer('epebNo')->nullable();
+            $table->string('epebDate')->nullable();
+            $table->string('registerDate')->nullable();
+            $table->string('awardtitleNo')->nullable();
+            $table->string('distributeDate')->nullable();
             $table->timestamps();
         });
     }

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('gender');
             $table->string('lotType');
             $table->string('awardType');
-            $table->string('transmittalStatus');
+            $table->string('ownership');
             $table->timestamps();
         });
     }

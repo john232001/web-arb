@@ -17,9 +17,9 @@ class Arb extends Model
         'extension',
         'spousename',
         'datebirth',
-        'gender',
+        'gender_id',
         'address',
-        'ownership',
+        'ownership_id',
         'dateOfOath',
     ];
 }

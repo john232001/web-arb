@@ -10,16 +10,16 @@ class HomeController extends Controller
     {
         return view('homepage.home');
     }
-    public function about()
+    public function aboutus()
     {
         return view('homepage.about');
+    }
+    public function darleaders()
+    {
+        return view('homepage.darleaders');
     }
     public function services()
     {
         return view('homepage.services');
-    }
-    public function contact()
-    {
-        return view('homepage.contact');
     }
 }

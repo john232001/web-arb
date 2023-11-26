@@ -9,7 +9,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
+            <h1 class="m-0">DASHBOARD</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -26,7 +26,7 @@
               <span class="info-box-icon bg-info elevation-1"><i class="fas fa-user"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Landholdings</span>
+                <span class="info-box-text">LANDHOLDINGS</span>
                 <span class="info-box-number">
                     {{ $totalLandholdings }}
                 </span>
@@ -41,7 +41,7 @@
               <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-landmark"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Lots</span>
+                <span class="info-box-text">LOTS</span>
                 <span class="info-box-number">{{ $totalLots }}</span>
               </div>
               <!-- /.info-box-content -->
@@ -58,7 +58,7 @@
               <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">ARBs</span>
+                <span class="info-box-text">ARB</span>
                 <span class="info-box-number">{{ $totalArbs }}</span>
               </div>
               <!-- /.info-box-content -->
@@ -71,7 +71,7 @@
               <span class="info-box-icon bg-success elevation-1"><i class="fas fa-handshake"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Awarded Land</span>
+                <span class="info-box-text">AWARDED LAND</span>
                 <span class="info-box-number">{{ $totalAwardland }}</span>
               </div>
               <!-- /.info-box-content -->
@@ -84,7 +84,7 @@
               <span class="info-box-icon bg-secondary elevation-1"><i class="fas fa-users"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">ASPs</span>
+                <span class="info-box-text">ASP</span>
                 <span class="info-box-number">{{ $totalAsp }}</span>
               </div>
               <!-- /.info-box-content -->
@@ -96,7 +96,7 @@
               <span class="info-box-icon bg-success elevation-1"><i class="fas fa-users"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Valuations</span>
+                <span class="info-box-text">VALUATIONS</span>
                 <span class="info-box-number">{{ $totalValuation}}</span>
               </div>
               <!-- /.info-box-content -->

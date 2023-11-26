@@ -9,29 +9,42 @@ class LotController extends Controller
 {
     public function store(Request $request)
     {
-        $request->validate([
-            'lotNo' => 'required',
-            'lotType_id' => 'required',
-            'lotArea' => 'required',
-        ]);
-
-        DB::table('lots')->insert([
-            'landholding_id' => $request->landholding_id,
-            'lotNo' => $request->lotNo,
-            'lotType_id' => $request->lotType_id,
-            'lotArea' => $request->lotArea,
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s')
-        ]);
-
-        return redirect()->back()->with('success', 'Added successfully');
+        try{
+            $request->validate([
+                'lotNo' => 'required',
+                'lotType_id' => 'required',
+                'lotArea' => 'required',
+                'arb_name' => 'required',
+            ],[
+                'lotNo.required' => 'The lot number field is required.',
+                'lotType_id.required' => 'The lot type field is required.'
+            ]);
+    
+            DB::table('lots')->insert([
+                'landholding_id' => $request->landholding_id,
+                'arb_name' => $request->arb_name,
+                'lotNo' => $request->lotNo,
+                'lotType_id' => $request->lotType_id,
+                'lotArea' => $request->lotArea,
+                'crop' => $request->crop,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ]);
+    
+            return redirect()->back()->with('success', 'Added successfully');
+        }
+        catch(\Exception $e){
+            return redirect()->back()->with('error', 'Failed to insert data' . $e->getMessage());
+        }
     }
     public function update(Request $request, $id)
     {
         $dataupdate = [
+            'arb_name' => $request->arb_name,
             'lotNo' => $request->lotNo,
             'lotType_id' => $request->lotType_id,
             'lotArea' => $request->lotArea,
+            'crop' => $request->crop,
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ];
@@ -42,6 +55,6 @@ class LotController extends Controller
     public function delete($id)
     {
         DB::table('lots')->where('lots.id', $id)->delete();
-        return redirect()->back()->with('destroy', 'Deleted successfully');
+        return redirect()->back()->with('error', 'Deleted successfully');
     }
 }

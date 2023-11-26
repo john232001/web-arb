@@ -16,8 +16,8 @@ class Form42Controller extends Controller
     public function generateform($id)
     {
         $data = DB::table('landholdings')
-            ->join('maros', 'maros.id', '=', 'landholdings.maro_id')
-            ->select('landholdings.*', 'maros.*')
+            ->join('officers', 'officers.id', '=', 'landholdings.maro_id')
+            ->select('landholdings.*', 'officers.officer_name')
             ->where('landholdings.id', $id)->first();
         $templateProcessor = new TemplateProcessor('form-template/FormNo.42.docx');
         $templateProcessor->setValue('firstname', $data->firstname);
@@ -31,7 +31,7 @@ class Form42Controller extends Controller
         $templateProcessor->setValue('surveyArea', $data->surveyArea);
         $templateProcessor->setValue('taxNo', $data->taxNo);
         $templateProcessor->setValue('municipality', $data->municipality);
-        $templateProcessor->setValue('name', $data->name);
+        $templateProcessor->setValue('maro', $data->officer_name);
         $fileName = $data->familyname;
         $templateProcessor->saveAs('Form No.42' . '-' . $fileName . '.docx');
         return response()->download('Form No.42' . '-' . $fileName . '.docx')->deleteFileAfterSend(true);

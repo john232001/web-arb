@@ -14,9 +14,11 @@ return new class extends Migration
         Schema::create('lots', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('landholding_id');
+            $table->bigInteger('arb_name');
             $table->string('lotNo');
             $table->string('lotType_id');
-            $table->string('lotArea');
+            $table->float('lotArea');
+            $table->string('crop')->nullable();
             $table->timestamps();
         });
     }

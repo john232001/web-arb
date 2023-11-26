@@ -12,12 +12,12 @@ class Valuation extends Model
     protected $table = 'valuations';
     protected $fillable = [
         'landholding_id',
-        'status_id',
         'aocNo',
         'claimNo',
         'dateTransmitted',
         'dateofMov',
         'dateServed',
+        'transmittalStatus',
         'stateReason',
     ];
 }

@@ -9,12 +9,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Manage Landholding</h1>
+                    <h1>MANAGE LANDHOLDINGS</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                    <li class="breadcrumb-item active">Landholding</li>
+                    <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">DASHBOARD</a></li>
+                    <li class="breadcrumb-item active">LANDHOLDING</li>
                     </ol>
                 </div>
                 </div>
@@ -28,23 +28,23 @@
                 <div class="col-12">
                     <div class="card">
                     <div class="card-header">
-                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addlandholding">Add Landholding</button>
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addlandholding">ADD LANDHOLDING</button>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <table id="example2" class="table table-bordered table-striped">
+                        <table id="dar_tables" class="table table-bordered table-striped">
                         <thead>
                         <tr>
                             <th>LHID</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Middle Name</th>
-                            <th>Municipality</th>
-                            <th>Barangay</th>
-                            <th>OCT/TCT No.</th>
-                            <th>Lot No.</th>
-                            <th>Survey No.</th>
-                            <th>Action</th>
+                            <th>FIRST NAME</th>
+                            <th>LAST NAME</th>
+                            <th>MIDDLE NAME</th>
+                            <th>MUNICIPALITY</th>
+                            <th>BARANGAY</th>
+                            <th>OCT/TCT NO.</th>
+                            <th>LOT NO.</th>
+                            <th>SURVEY NO.</th>
+                            <th>ACTION</th>
                         </tr>
                         </thead>
                         <tbody>

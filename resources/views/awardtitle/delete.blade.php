@@ -1,7 +1,7 @@
 <div class="modal fade" id="deletemodalawardtitle{{ $data->id }}">
     <div class="modal-dialog modal-md">
     <div class="modal-content">
-        <div class="modal-header bg-success">
+        <div class="modal-header bg-danger">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -12,7 +12,7 @@
         <div class="modal-footer justify-content-between">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             <a href="{{ route('awardtitle_delete', $data->id )}}">
-                <button type="submit" class="btn btn-success">Save changes</button>
+                <button type="submit" class="btn btn-danger">Delete</button>
             </a>
         </div>
     </form>

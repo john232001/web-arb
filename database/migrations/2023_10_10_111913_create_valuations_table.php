@@ -14,12 +14,16 @@ return new class extends Migration
         Schema::create('valuations', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('landholding_id');
-            $table->bigInteger('status_id');
+            $table->string('lotNumber_id');
             $table->integer('aocNo');
             $table->string('claimNo');
-            $table->string('dateTransmitted');
-            $table->string('dateofMov');
-            $table->string('dateServed');
+            $table->string('amount');
+            $table->string('dateTransmitted')->nullable();
+            $table->string('dateofMov')->nullable();
+            $table->string('dateServed')->nullable();
+            $table->string('dateofFI')->nullable();
+            $table->string('dateofCF')->nullable();
+            $table->string('transmittalStatus')->nullable();
             $table->string('stateReason')->nullable();
             $table->timestamps();
         });

@@ -16,9 +16,20 @@ class Form46Controller extends Controller
     public function generateform($id)
     {
         $data = DB::table('landholdings')
-            ->join('maros', 'maros.id', '=', 'landholdings.maro_id')
-            ->select('landholdings.*', 'maros.*')
+            ->leftJoin('asps', 'landholdings.id', '=', 'asps.landholding_id')
+            ->where('landholdings.id', $id)
+            ->first();
+
+        $maro = DB::table('landholdings')
+            ->join('officers', 'officers.id', '=', 'landholdings.maro_id')
+            ->select('landholdings.*', 'officers.officer_name')
             ->where('landholdings.id', $id)->first();
+        $paro = DB::table('landholdings')
+            ->join('officers', 'officers.id', '=', 'landholdings.paro_id')
+            ->select('landholdings.*', 'officers.officer_name')
+            ->where('landholdings.id', $id)->first();
+
+
         $templateProcessor = new TemplateProcessor('form-template/FormNo.46.docx');
         $templateProcessor->setValue('firstname', $data->firstname);
         $templateProcessor->setValue('familyname', $data->familyname);
@@ -31,7 +42,9 @@ class Form46Controller extends Controller
         $templateProcessor->setValue('surveyArea', $data->surveyArea);
         $templateProcessor->setValue('taxNo', $data->taxNo);
         $templateProcessor->setValue('municipality', $data->municipality);
-        $templateProcessor->setValue('name', $data->name);
+        $templateProcessor->setValue('aspNo', $data->aspNo);
+        $templateProcessor->setValue('maro', $maro->officer_name);
+        $templateProcessor->setValue('paro', $paro->officer_name);
         $fileName = $data->familyname;
         $templateProcessor->saveAs('Form No.46' . '-' . $fileName . '.docx');
         return response()->download('Form No.46' . '-' . $fileName . '.docx')->deleteFileAfterSend(true);

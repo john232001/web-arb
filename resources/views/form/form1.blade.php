@@ -8,13 +8,18 @@
         <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-            <div class="col-sm-6">
-                <h1>Form No. 1 Conduct of Preliminary Ocular Inspection</h1>
+            <div class="col-sm-9">
+                <h1>FORM NO. 1 - CONDUCT OF PRELIMINARY OCULAR INSPECTION</h1>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-3">
                 <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                <li class="breadcrumb-item active">Form</li>
+                    <li class="breadcrumb-item">
+                        @foreach ($landholdings as $data)
+                            <a href="{{ route('landholding_view', $data->id )}}" class="btn btn-primary">
+                                Go back
+                            </a>
+                        @endforeach
+                    </li>
                 </ol>
             </div>
             </div>
@@ -29,15 +34,15 @@
                 <div class="card">
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <table id="example2" class="table table-bordered table-striped">
+                    <table id="dar_tables7" class="table table-bordered table-striped">
                     <thead>
                     <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Middle Name</th>
-                        <th>Municipality</th>
-                        <th>Barangay</th>
-                        <th>Action</th>
+                        <th>FIRST NAME</th>
+                        <th>LAST NAME</th>
+                        <th>MIDDLE NAME</th>
+                        <th>MUNICIPALITY</th>
+                        <th>BARANGAY</th>
+                        <th>ACTION</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -51,7 +56,7 @@
                                 <td>
                                     <a href="{{ route('form1_generate', $data->id )}}">
                                         <button class="btn btn-success btn-sm">
-                                            <i class="icon-export"></i>Generate Form
+                                            <i class="icon-export"></i>GENERATE FORM
                                         </button>
                                     </a>
                                 </td>

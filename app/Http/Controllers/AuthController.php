@@ -13,49 +13,25 @@ class AuthController extends Controller
     {
         return view('auth.login');
     }
-    public function register()
-    {
-        return view('auth.register');
-    }
-    public function postRegister(Request $request)
-    {
-        //validate request
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:8',
-            'confirm_password' => 'required_with:password|same:password|min:8',
-        ]);
-
-        $data = $request->all();
-        $createUsers = $this->create($data);
-        return redirect()->route('register')->with('success', 'Registered successfully.');
-    }
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
+            'username' => $data['username'],
             'password' => $data['password'],
         ]);
     }
     public function postLogin(Request $request)
     {
-
         $request->validate([
-            'email' => 'required|email',
+            'username' => 'required',
             'password' => 'required',
         ]);
 
         //check credentials
-        $checklogin = $request->only('email', 'password');
+        $checklogin = $request->only('username', 'password');
         if (Auth::attempt($checklogin)) {
             return redirect()->route('dashboard')->with('success', 'Login Successfully');
-        }
-        else{
+        } else {
             return redirect()->route('login')->with('error', 'Invalid credentials');
         }
     }
@@ -63,7 +39,7 @@ class AuthController extends Controller
     {
         Session::flush();
         Auth::logout();
-        return redirect()->route('login')->with('logout', 'Logout Successfully');
+        return redirect()->route('login')->with('error', 'Logout Successfully');
     }
     public function dashboard()
     {

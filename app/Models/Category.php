@@ -14,6 +14,6 @@ class Category extends Model
         'gender',
         'lotType',
         'awardType',
-        'transmittalStatus'
+        'ownership'
     ];
 }

@@ -25,7 +25,6 @@ return new class extends Migration
             $table->string('surveyArea');
             $table->string('taxNo')->nullable();
             $table->string('modeOfAcquisition')->nullable();
-            $table->string('dfNo')->nullable();
             $table->string('coverableArea')->nullable();
             $table->string('carpableArea')->nullable();
             $table->string('noncarpableArea')->nullable();
@@ -40,7 +39,8 @@ return new class extends Migration
             $table->string('targetyear')->nullable();
             $table->string('projectedDelivery')->nullable();
             $table->bigInteger('maro_id');
-            $table->string('file');
+            $table->bigInteger('paro_id');
+            $table->string('file')->nullable();
             $table->timestamps();
         });
     }

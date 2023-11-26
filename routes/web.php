@@ -16,10 +16,13 @@ use App\Http\Controllers\Form46Controller;
 use App\Http\Controllers\Form47Controller;
 use App\Http\Controllers\Form49Controller;
 use App\Http\Controllers\Form51Controller;
+use App\Http\Controllers\Form52BController;
+use App\Http\Controllers\Form53Controller;
 use App\Http\Controllers\Form54Controller;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LandholdingController;
 use App\Http\Controllers\LotController;
+use App\Http\Controllers\OfficerController;
 use App\Http\Controllers\ValuationController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,9 +39,9 @@ use Illuminate\Support\Facades\Route;
 
 //Homepage Routes
 Route::get('/', [HomeController::class, 'home'])->name('home');
-Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/aboutus', [HomeController::class, 'aboutus'])->name('aboutus');
+Route::get('/darleaders', [HomeController::class, 'darleaders'])->name('darleaders');
 Route::get('/services', [HomeController::class, 'services'])->name('services');
-Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 //Authentication Routes
 Route::get('login', [AuthController::class, 'index'])->name('login');
 Route::get('register', [AuthController::class, 'register'])->name('register');
@@ -110,3 +113,14 @@ Route::get('form54/generateform/{id}', [Form54Controller::class, 'generateform']
 //Form No. 51 Routes
 Route::get('form51/{id}', [Form51Controller::class, 'selectform51'])->name('form51');
 Route::get('form51/generateform/{id}', [Form51Controller::class, 'generateform'])->name('form51_generate');
+//Form No. 52B Routes
+Route::get('form52B/{id}', [Form52BController::class, 'selectform52B'])->name('form52B');
+Route::get('form52B/generateform/{id}', [Form52BController::class, 'generateform'])->name('form52B_generate');
+//Form No. 53 Routes
+Route::get('form53/{id}', [Form53Controller::class, 'selectform53'])->name('form53');
+Route::get('form53/generateform/{id}', [Form53Controller::class, 'generateform'])->name('form53_generate');
+//Manage Officers
+Route::get('officers', [OfficerController::class, 'index'])->name('officers');
+Route::post('officer/store', [OfficerController::class, 'store'])->name('officer_store');
+Route::put('officer/update/{id}', [OfficerController::class, 'update'])->name('officer_update');
+Route::get('officer/delete/{id}', [OfficerController::class, 'delete'])->name('officer_delete');

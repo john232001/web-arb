@@ -15,10 +15,16 @@ class Form1Controller extends Controller
     }
     public function generateform($id)
     {
-        $data = DB::table('landholdings')
-            ->join('maros', 'maros.id', '=', 'landholdings.maro_id')
-            ->select('landholdings.*', 'maros.*')
+        $data = DB::table('landholdings')->where('landholdings.id', $id)->first();
+        $maro = DB::table('landholdings')
+            ->join('officers', 'officers.id', '=', 'landholdings.maro_id')
+            ->select('landholdings.*', 'officers.officer_name')
             ->where('landholdings.id', $id)->first();
+        $paro = DB::table('landholdings')
+            ->join('officers', 'officers.id', '=', 'landholdings.paro_id')
+            ->select('landholdings.*', 'officers.officer_name')
+            ->where('landholdings.id', $id)->first();
+        
         $templateProcessor = new TemplateProcessor('form-template/FormNo.1.docx');
         $templateProcessor->setValue('firstname', $data->firstname);
         $templateProcessor->setValue('familyname', $data->familyname);
@@ -32,8 +38,8 @@ class Form1Controller extends Controller
         $templateProcessor->setValue('taxNo', $data->taxNo);
         $templateProcessor->setValue('municipality', $data->municipality);
         $templateProcessor->setValue('phase', $data->phase);
-        $templateProcessor->setValue('name', $data->name);
-        $templateProcessor->setValue('muni', $data->muni);
+        $templateProcessor->setValue('maro', $maro->officer_name);
+        $templateProcessor->setValue('paro', $paro->officer_name);
         $fileName = $data->familyname;
         $templateProcessor->saveAs('Form No.1' . '-' . $fileName . '.docx');
         return response()->download('Form No.1' . '-' . $fileName . '.docx')->deleteFileAfterSend(true);
