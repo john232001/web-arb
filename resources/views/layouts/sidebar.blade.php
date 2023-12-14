@@ -5,7 +5,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel pb-3 mb-3 d-flex justify-content-center">
         <div class="image">
-          <img src="{{ asset('dist/img/logo.png')}}" class="img-circle elevation-2" style="width: 100px; height: 100px;" alt="User Image">
+          <img src="{{ asset('dist/img/dar-logo.png')}}" class="img-circle elevation-2" style="width: 100px; height: 100px;" alt="User Image">
         </div>
       </div>
       <div class="user-panel mt-3 pb-3 mb-3 d-flex justify-content-center">

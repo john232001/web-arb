@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="dist/img/logo.png">
+    <link rel="shortcut icon" href="{{ asset('dist/img/dar-logo.png')}}">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -19,7 +19,7 @@
       href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="dist/css/style.css"/>
+    <link rel="stylesheet" href="{{ asset('dist/css/style.css')}}"/>
     <title>Department of Agrarian Reform</title>
   </head>
   <body>
@@ -27,7 +27,7 @@
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
       <div class="container">
         <a href="#" class="navbar-brand">
-            <img src="dist/img/logo.png" alt="" style="width: 50px;"><span class="text-white"> Department of Agrarian Reform</span>
+            <img src="dist/img/dar-logo.png" alt="" style="width: 50px;"><span class="text-white"> Department of Agrarian Reform</span>
         </a>
 
         <button

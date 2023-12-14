@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Department of Agrarian Reform</title>
 
-  <link rel="shortcut icon" href="dist/img/logo.png">
+  <link rel="shortcut icon" href="{{ asset('dist/img/dar-logo.png')}}">
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">

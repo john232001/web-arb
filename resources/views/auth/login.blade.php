@@ -8,10 +8,10 @@
         <div class="card">
           <div class="position-relative">
             <div class="position-absolute top-0 start-50 translate-middle">
-              <img src="dist/img/logo-header.png" alt="" style="width: 100px;">
+              <img src="dist/img/dar-logo.png" alt="" style="width: 100px;">
             </div>
           </div>
-          <div class="card-body my-5 ">
+          <div class="card-body mt-5 mb-3">
             <h2 class="text-center mb-3">LOGIN</h2>
             
             @if(Session::has('error'))

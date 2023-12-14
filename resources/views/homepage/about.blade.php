@@ -7,14 +7,12 @@
       <h2 class="text-center mb-5">About Us</h2>
       <div class="row align-items-center justify-content-between mb-5">
         <div class="col-md">
-          <img src="https://image.slidesharecdn.com/historyofagrarianreform-160902051208/95/history-of-agrarian-reform-1-638.jpg?cb=1472793223" class="img-fluid rounded-3" alt="" />
+          <img src="{{ asset('dist/img/background-dar.jpg') }}" class="img-fluid rounded-3" alt="" />
         </div>
         <div class="col-md p-5">
-          <h2>Agrarian Reform History</h2>
+          <h2>Department of Agrarian Reform (DAR)</h2>
           <p>
-              The history of agrarian reform in the Philippines dates back to the early 20th century,
-               when the American colonial government implemented a number of measures aimed at improving the lives of Filipino farmers. These measures included the Homestead Act of 1903, which allowed individuals to claim land for free if they cultivated it for five years,
-               and the Cadastral Act of 1913, which established a system for surveying and registering land ownership.
+            The Department of Agrarian Reform is the lead government agency that holds and implements comprehensive and genuine agrarian reform which actualizes equitable land distribution, ownership, agricultural productivity, and tenurial security for, of and with the tillers of the land towards the improvement of their quality of life.
           </p>
         </div>
       </div>

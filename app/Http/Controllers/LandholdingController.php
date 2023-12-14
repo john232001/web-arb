@@ -167,7 +167,7 @@ class LandholdingController extends Controller
             $filePath = public_path("uploads/documents/{$landholding->file}");
             return response()->download($filePath);
         } else {
-            return redirect()->back()->with('error', 'No Document Exist!');
+            return redirect()->back()->with('error', 'No Document to download!');
         }
     }
     public function show($id)
